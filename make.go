@@ -70,7 +70,7 @@ func (l Link) SymLink() error {
 
         par := filepath.Dir(l.Rel[i])
 
-        err := os.Mkdir(par, 0750)
+        err := os.MkdirAll(par, 0750)
         if err != nil && !os.IsExist(err) {
             return err
         }
