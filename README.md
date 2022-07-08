@@ -12,6 +12,13 @@ To keep things easy, there's a script to get symlink:
 ```sh
 $ go run make.go 
 ```
+
+## SCROT
+
+![Gentoo](tmp/Gentoo.png)
+
+![OpenBSD](tmp/OpenBSD.png)
+
 ## LICENSE
 
 BSD only, see [LICENSE].
