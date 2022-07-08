@@ -1,0 +1,11 @@
+#!/bin/bash
+
+shopt -s extglob
+
+case $(file --mime-type "$1" -b) in
+    text/html)    lynx -width="$4" -display_charset=utf-8 -dump "$1";;
+    text/* | application/json | inode/symlink )   cat      "$1"     ;;
+    text/troff)                                   man   -l "$1"     ;;
+    application/@(zip|x-tar))                     atool -l "$1"     ;;
+    *)                                            exiftool "$1"     ;;
+esac && exit 1

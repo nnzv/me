@@ -1,0 +1,38 @@
+set shell bash
+set icons
+set shellopts '-eu'
+
+set ifs "\n"
+set drawbox
+set scrolloff 10
+set info size
+
+set previewer "~/.config/lf/prv"
+
+map <enter> shell
+map . set hidden!
+
+map x $$f
+map X !$f
+
+map o &mimeopen $f
+map O $mimeopen --ask $f
+
+cmd open ${{
+    shopt -s extglob
+    #
+    test -L $f && f=$(readlink -f $f)
+    #
+    # Useful function 
+    use() { setsid -f $@ $f >/dev/null 2>&1; }
+    #
+    case $(file --mime-type $f -b) in
+          video/*)                      use  mpv            ;;
+          image/x-xcf)                  use  gimp           ;;
+          image/*)                      use  sxiv           ;;
+          audio/*)                      use  mpv --no-audio ;;
+          application/*officedocument*) use  libreoffice    ;;
+          application/@(pdf|vnd|epub))  use  zathura        ;;
+          *)                            nvim $fx            ;;
+    esac
+}}

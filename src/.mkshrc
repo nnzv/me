@@ -1,0 +1,47 @@
+# Is mksh interactive?
+[[ $- != *i* ]] && return
+# Kill [CTRL-d]
+set -o ignoreeof 
+# Enable vi mode
+set -o vi
+# Set some aliases 
+alias \
+    dk=docker \
+    eq=equery \
+    qd=qdepends \
+    g=git \
+    ql=qlist \
+    v{i,im}=nvim \
+    ns='doas nvim' \
+    es='doas eselect' \
+    kb=minikube \
+    qo=qlop \
+    eb='doas ebuild' \
+    em='doas emerge' \
+    ls='ls --color=always --group-directories-first' \
+    ks=kubectl \
+    mv="mv -v" \
+    rm="rm -iv" \
+    mkdir="mkdir -pv" \
+    ts='trans -brief :es'
+# Enveriomental variables
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:$HOME/.local/bin
+export \
+    G=$HOME/.local/git \
+    SHELL=$(which mksh) \
+    _JAVA_AWT_WM_NONREPARENTING=1 \
+    EDITOR=$(which nvim) \
+    BROWSER=firefox \
+    XAUTHORITY="$HOME/.cache/.Xauthority" \
+    LESSHISTFILE=- \
+    GIT_TERMINAL_PROMPT=1 \
+    PYTHONSTARTUP=~/.pythonrc \
+    PYTHONDONTWRITEBYTECODE=1 \
+    WORLD=/var/lib/portage/world \
+    PKGUSE=/etc/portage/package.use \
+    MAKECONF=/etc/portage/make.conf \
+    CGO_ENABLED=1

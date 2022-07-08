@@ -1,0 +1,8 @@
+XDG_DESKTOP_DIR="$HOME/.local/cache/desktop"
+XDG_DOCUMENTS_DIR="$HOME/.local/cache/doc"
+XDG_DOWNLOAD_DIR="$HOME/.local/cache/wget"
+XDG_MUSIC_DIR="$HOME/.local/cache/mp3"
+XDG_PICTURES_DIR="$HOME/.local/cache/jpg"
+XDG_PUBLICSHARE_DIR="$HOME/.local/cache/pub"
+XDG_TEMPLATES_DIR="$HOME/.local/cache/tmpl"
+XDG_VIDEOS_DIR="$HOME/.local/cache/mp4"

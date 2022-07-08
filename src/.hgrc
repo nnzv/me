@@ -1,0 +1,17 @@
+[ui]
+username  = Enzo Venturi <zventuri@tuta.io>
+interface = curses
+
+[alias]
+rb = rebase
+cp = clone
+sh = push
+ll = pull
+dd = add
+ff = diff
+it = commit
+us = status
+
+[pager]
+attend-status = false
+attend-diff   = false

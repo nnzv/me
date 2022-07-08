@@ -1,0 +1,8 @@
+set statusbar-fg                "#ffffff"
+set statusbar-bg                "#1D2021"
+set recolor-lightcolor          "#070708" 
+set recolor-darkcolor           "#ffffff" 
+
+set selection-clipboard clipboard
+set font Hack
+set guioptions none

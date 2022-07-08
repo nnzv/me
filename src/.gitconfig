@@ -1,0 +1,34 @@
+[user]
+    name  = Enzo Venturi
+    email = zventuri@tuta.io
+
+[init]
+    defaultBranch = main
+
+[core]
+    editor = nvim
+    pager  = less
+    excludesfile = ~/.gitignore
+
+[alias]
+    rb = rebase
+    cp = clone -q -j8
+    dd = add -v
+    us = status -sb
+    cd = checkout -b
+    it = commit -v
+    cd = checkout
+    rd = remote add
+    ff = diff
+    no = reset --soft HEAD^
+    ll = pull -q
+    sh = push -q
+    ls = log --pretty=format:'%Cred%h%Creset %s'
+    fuck = reset --hard
+
+[push]
+    # push only to the current branch
+    default = simple
+
+[diff]
+    tool  = vimdiff

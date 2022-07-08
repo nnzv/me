@@ -1,0 +1,18 @@
+unbind-key      all
+unbind-mouse    all
+fontname  'Hack:pixelsize=13:bold'
+
+# switcher
+wm dwm dwm
+
+# programs
+bind-key    M-a         alacritty
+bind-key    M-p         dmenu_run
+
+# shortcuts
+bind-key    MS-q             quit
+bind-key    MS-d     menu-exec-wm
+bind-key    M-d      window-close
+bind-mouse  M-1       window-move 
+bind-mouse  M-3     window-resize
+bind-key    M-f window-fullscreen
