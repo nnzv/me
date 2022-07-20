@@ -19,8 +19,3 @@ One way to undo that is to use `-u` flag, or simple execute:
 ----
 % find ~/ -type l -delete
 ----
-
-== png
-
-image:tmp/OpenBSD.png:[]
-image:tmp/Gentoo.png:[]
