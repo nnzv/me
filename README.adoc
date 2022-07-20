@@ -1,0 +1,26 @@
+[,txt]
+----
+ _ __ ___   ___ 
+| '_ ` _ \ / _ \
+| | | | | |  __/
+|_| |_| |_|\___| ls ~/.*
+----
+
+Intended to store config files of _personal nature_. There's a proper script to manage symlink process:
+
+[,sh]
+----
+% go run make.go
+----
+
+One way to undo that is to use `-u` flag, or simple execute:
+
+[,sh]
+----
+% find ~/ -type l -delete
+----
+
+== png
+
+image:tmp/OpenBSD.png:[]
+image:tmp/Gentoo.png:[]
