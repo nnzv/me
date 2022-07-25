@@ -1,0 +1,81 @@
+#!/bin/sh
+
+alias h=herbstclient 
+
+h keyunbind --all
+h emit_hook reload
+
+k() { h keybind "$@"; }
+
+M="Mod1"
+
+k $M-q quit
+k $M-r reload
+k $M-d close
+k $M-a spawn alacritty 
+k $M-p spawn dmenu_run
+
+k $M-h  focus left
+k $M-j  focus down
+k $M-k  focus up
+k $M-l  focus right
+
+k $M-Shift-Left  shift left
+k $M-Shift-Down  shift down
+k $M-Shift-Up    shift up
+k $M-Shift-Right shift right
+
+# tags
+tn=( 001 002 003 004 005 006 007 008 009 )
+tk=(  1   2   3   4   5   6   7   8   9  )
+
+h rename default "${tn[0]}" || true
+for z in ${!tn[@]} ; do
+    h add ${tn[$z]}
+    k "$M-${tk[$z]}" use_index "$z"
+    k "$M-Shift-${tk[$z]}" move_index "$z"
+done
+
+# cycle through tags
+k $M-period use_index +1 --skip-visible
+k $M-comma  use_index -1 --skip-visible
+
+# layouting
+k $M-l floating toggle
+k $M-f fullscreen toggle
+
+# mouse
+h mouseunbind --all
+h mousebind $M-Button1 move
+h mousebind $M-Button2 zoom
+h mousebind $M-Button3 resize
+
+# focus
+k $M-BackSpace   cycle_monitor
+k $M-Tab         cycle_all +1
+k $M-Shift-Tab   cycle_all -1
+k $M-c cycle
+k $M-i jumpto urgent
+
+# theme
+h attr theme.tiling.reset 1
+h attr theme.floating.reset 1
+h set frame_bg_transparent on
+h set frame_transparent_width 0
+
+h attr theme.title_when never
+h attr theme.inner_width 0
+h attr theme.border_width 0
+h attr theme.floating.border_width 0
+h attr theme.floating.outer_width 0
+h attr theme.tiling.outer_width 0
+
+h set window_gap 10
+h set frame_padding 0
+h set smart_window_surroundings off
+h set smart_frame_surroundings on
+h set mouse_recenter_gap 0
+
+h set tree_style '╾│ ├└╼─┐'
+
+h unlock
