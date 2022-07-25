@@ -1,0 +1,34 @@
+#!/bin/rc
+
+# aliases :)
+fn dk    {        docker $* }
+fn vi    {          nvim $* }
+fn vim   {          nvim $* }
+fn  g    {           git $* }
+fn ns    {     doas nvim $* }
+fn ql    {         qlist $* }
+fn kb    {      minikube $* }
+fn em    {   doas emerge $* }
+fn ks    {       kubectl $* }
+fn es    {  doas eselect $* }
+fn rm    {        rm -iv $* }
+fn mv    {         mv -v $* }
+fn mkdir {     mdkir -pv $* }
+fn qo    {          qlop $* }
+fn eq    {        equery $* }
+fn eb    {   doas ebuild $* }
+
+# enviroment variables
+G=$HOME/.local/git
+_JAVA_AWT_WM_NONREPARENTING=1 
+BROWSER=firefox 
+XAUTHORITY=$HOME/.cache/.Xauthority
+LESSHISTFILE=- 
+GIT_TERMINAL_PROMPT=1 
+PYTHONSTARTUP=$HOME/.pythonrc 
+PYTHONDONTWRITEBYTECODE=1 
+WORLD=/var/lib/portage/world 
+PKGUSE=/etc/portage/package.use 
+MAKECONF=/etc/portage/make.conf 
+CGO_ENABLED=1
+path=(/bin /usr/bin /usr/local/bin/ /usr/bin /sbin $HOME/.local/bin )
