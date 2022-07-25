@@ -11,9 +11,6 @@ fn kb    {      minikube $* }
 fn em    {   doas emerge $* }
 fn ks    {       kubectl $* }
 fn es    {  doas eselect $* }
-fn rm    {        rm -iv $* }
-fn mv    {         mv -v $* }
-fn mkdir {     mkdir -pv $* }
 fn qo    {          qlop $* }
 fn eq    {        equery $* }
 fn eb    {   doas ebuild $* }
